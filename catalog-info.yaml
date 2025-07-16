@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: h2u7snjih-go-gitops
+  description: This is GitOps manifest for h2u7snjih-go   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: tssc/gitops=h2u7snjih-go
+    backstage.io/kubernetes-id: h2u7snjih-go 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: h2u7snjih-go
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:h2u7snjih-go
